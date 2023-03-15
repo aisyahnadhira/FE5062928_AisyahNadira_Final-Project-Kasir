@@ -1,0 +1,29 @@
+START
+READ AND WRITE kodeBarang WITH INT
+READ AND WRITE namaBarang WITH STRING
+READ AND WRITE hargaBarang WITH DOUBLE
+READ AND WRITE jumlahBarang WITH INT
+READ AND WRITE totalHargaBarang WITH DOUBLE
+READ AND WRITE totalKeseluruhan WITH DOUBLE
+READ AND WRITE kembalian WITH DOUBLE
+READ AND WRITE uangPembayaran WITH DOUBLE
+READ AND WRITE "buy_again" WITH BOOLEAN
+
+FUNCTION InputBarang
+    INPUT kodeBarang
+    PRINT namaBarang && hargaBarang
+    INPUT jumlahBarang
+    STORE totalHargaBarang with hargaBarang multipy by jumlahBarang
+    STORE totalKeseluruhan plus equal totalHargaBarang[n]
+END FUNCTION
+
+IF "buy_again" IS TRUE
+    InputBarang
+ElSE
+    PRINT totalKeseluruhan
+
+INPUT uangPembayaran
+STORE kembalian with uangPembayaran minus totalKeseluruhan
+PRINT buktiPembayaran
+
+END
